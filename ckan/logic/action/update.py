@@ -269,13 +269,13 @@ def package_update(context, data_dict):
 
     It is recommended to call
     :py:func:`ckan.logic.action.get.package_show`, make the desired changes to
-    the result, and then call ``package_update()`` with it.
+    the ``modified_package`` result, and then call ``package_update({},modified_package)`` with it.
 
     Plugins may change the parameters of this function depending on the value
     of the dataset's ``type`` attribute, see the
     :py:class:`~ckan.plugins.interfaces.IDatasetForm` plugin interface.
 
-    For further parameters see
+    ``data_dict`` is a full package object. For further parameters see
     :py:func:`~ckan.logic.action.create.package_create`.
 
     :param id: the name or id of the dataset to update
